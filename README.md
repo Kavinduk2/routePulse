@@ -14,3 +14,64 @@ routePulse is a lightweight, high-performance middleware for Express.js applicat
 - 🚨 **Slow Route Alerts** - Configurable threshold for warning about slow responses
 - 📈 **Debug Dashboard** - Built-in endpoint to view real-time statistics
 - 🎯 **Production Ready** - Handles UUID, MongoDB ObjectID, and numeric IDs
+
+## Installation
+
+```bash
+npm install routePulse
+```
+
+## Quick Start
+
+```javascript
+const express = require("express");
+const { monitor } = require("routePulse");
+
+const app = express();
+
+// Add the middleware
+app.use(monitor({ slowThreshold: 500 }));
+
+// Your routes here
+app.get("/api/users", (req, res) => {
+  res.json({ users: [] });
+});
+
+app.listen(3000);
+```
+
+## Configuration
+
+### Options
+
+```javascript
+{
+  slowThreshold: 500; // Time in milliseconds before a warning is logged (default: 500ms)
+}
+```
+
+## Debug Dashboard
+
+View real-time statistics by visiting the debug endpoint:
+
+```
+GET /debug/speed
+```
+
+Response:
+
+```json
+{
+  "GET /api/users": {
+    "hits": 42,
+    "totalTimeMs": 1250,
+    "avgTimeMs": 29.76,
+    "maxTimeMs": 125,
+    "minTimeMs": 8
+  }
+}
+```
+
+## License
+
+MIT
