@@ -2,7 +2,7 @@
 
 > Zero-config Express.js middleware to automatically monitor, log, and analyze slow API routes in real-time.
 
-Stop guessing which route is bottlenecking your app. `routepulse` acts as a high-precision stopwatch for your Express API, alerting you instantly in the terminal when a database query or endpoint takes too long. 
+Stop guessing which route is bottlenecking your app. `routepulse` acts as a high-precision stopwatch for your Express API, alerting you instantly in the terminal when a database query or endpoint takes too long.
 
 Perfect for local development debugging and lightweight production monitoring.
 
@@ -23,8 +23,8 @@ Drop it into your Express app right after your body parsers, but before your rou
 ### ES Modules (import)
 
 ```javascript
-import express from 'express';
-import analyzer from 'routepulse';
+import express from "express";
+import analyzer from "routepulse";
 
 const app = express();
 app.use(express.json());
@@ -33,18 +33,18 @@ app.use(express.json());
 app.use(analyzer.monitor({ slowThreshold: 500 }));
 
 // 2. Your routes
-app.get('/api/users', (req, res) => {
+app.get("/api/users", (req, res) => {
   res.json({ message: "This route is lightning fast!" });
 });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(3000, () => console.log("Server running on port 3000"));
 ```
 
 ### CommonJS (require)
 
 ```javascript
-const express = require('express');
-const analyzer = require('routepulse');
+const express = require("express");
+const analyzer = require("routepulse");
 
 const app = express();
 app.use(express.json());
@@ -64,7 +64,7 @@ app.use(analyzer.monitor({ slowThreshold: 500 }));
 If an endpoint exceeds your `slowThreshold`, routepulse catches it and prints a highly visible warning directly in your server console, including the exact query parameters that caused the slowdown:
 
 ```
-🚨 SLOW ROUTE DETECTED 
+🚨 SLOW ROUTE DETECTED
 -> Route: POST /api/progress/mood
 -> Time:  393.16ms (Threshold: 300ms)
 -> Query: {"sort":"desc"}
@@ -102,9 +102,9 @@ At any point, navigate to the secret debug endpoint to view the live stats of yo
 
 Pass an options object into `analyzer.monitor(options)`:
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `slowThreshold` | number | 500 | The time in milliseconds before the terminal warning is triggered. |
+| Option          | Type   | Default | Description                                                        |
+| --------------- | ------ | ------- | ------------------------------------------------------------------ |
+| `slowThreshold` | number | 500     | The time in milliseconds before the terminal warning is triggered. |
 
 ## 📝 License
 

@@ -1,5 +1,5 @@
 {
-  "name": "routePulse",
+  "name": "routepulse",
   "version": "1.0.0",
   "description": "Zero-config Express.js middleware to automatically monitor, log, and analyze slow API routes.",
   "main": "src/index.js",
