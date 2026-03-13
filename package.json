@@ -1,0 +1,21 @@
+{
+  "name": "routePulse",
+  "version": "1.0.0",
+  "description": "Zero-config Express.js middleware to automatically monitor, log, and analyze slow API routes.",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "performance",
+    "hrtime",
+    "monitor",
+    "profiler",
+    "api-speed"
+  ],
+  "author": "Kavindu",
+  "license": "MIT"
+}
