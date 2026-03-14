@@ -1,4 +1,4 @@
-# ⚡ routepulse
+#  routepulse
 
 > Zero-config Express.js middleware to automatically monitor, log, and analyze slow API routes in real-time.
 
@@ -8,7 +8,7 @@ Perfect for local development debugging and lightweight production monitoring.
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ```bash
 npm install routepulse
@@ -16,7 +16,7 @@ npm install routepulse
 
 (Also supports `yarn add routepulse` and `pnpm add routepulse`)
 
-## 🚀 Quick Start
+##  Quick Start
 
 Drop it into your Express app right after your body parsers, but before your routes.
 
@@ -51,7 +51,7 @@ app.use(express.json());
 app.use(analyzer.monitor({ slowThreshold: 500 }));
 ```
 
-## 🔥 Features
+##  Features
 
 - **Zero-Config Setup**: No complex cloud dashboards, account sign-ups, or heavy agents to install.
 - **The "Slow-Log" Alert**: Instantly prints a bright red warning in your terminal if a route crosses your millisecond threshold.
@@ -59,7 +59,7 @@ app.use(analyzer.monitor({ slowThreshold: 500 }));
 - **High-Precision Timing**: Uses Node's native `process.hrtime()` for nanosecond-level accuracy, immune to system clock drift.
 - **TypeScript Ready**: Ships with built-in type declarations out of the box. No need to install `@types/routepulse`.
 
-## 🚨 What happens when a route is slow?
+##  What happens when a route is slow?
 
 If an endpoint exceeds your `slowThreshold`, routepulse catches it and prints a highly visible warning directly in your server console, including the exact query parameters that caused the slowdown:
 
@@ -71,13 +71,13 @@ If an endpoint exceeds your `slowThreshold`, routepulse catches it and prints a 
 -> Stats: Avg: 393.16ms | Max: 393.16ms
 ```
 
-## 📊 The Speed Dashboard
+##  The Speed Dashboard
 
 routepulse silently tracks your Max, Min, and Average response times in the background without polluting your console on fast routes.
 
 At any point, navigate to the secret debug endpoint to view the live stats of your entire API:
 
-👉 `http://localhost:3000/debug/speed`
+ `http://localhost:3000/debug/speed`
 
 ```json
 {
@@ -98,7 +98,7 @@ At any point, navigate to the secret debug endpoint to view the live stats of yo
 }
 ```
 
-## ⚙️ Configuration Options
+##  Configuration Options
 
 Pass an options object into `analyzer.monitor(options)`:
 
@@ -106,6 +106,6 @@ Pass an options object into `analyzer.monitor(options)`:
 | --------------- | ------ | ------- | ------------------------------------------------------------------ |
 | `slowThreshold` | number | 500     | The time in milliseconds before the terminal warning is triggered. |
 
-## 📝 License
+##  License
 
 MIT © 2026
